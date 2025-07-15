@@ -1,32 +1,39 @@
-body {
-  font-family: Arial, sans-serif;
-  padding: 20px;
+// Guardar estado en localStorage
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll(".course").forEach(course => {
+    const id = course.dataset.id;
+    const approved = localStorage.getItem(id) === "true";
+    if (approved) course.classList.add("approved");
+  });
+  updateLocks();
+});
+
+function toggleCourse(element) {
+  if (element.classList.contains("locked")) return;
+
+  element.classList.toggle("approved");
+
+  const id = element.dataset.id;
+  const approved = element.classList.contains("approved");
+  localStorage.setItem(id, approved);
+
+  updateLocks();
 }
 
-.semester {
-  border: 2px solid #000;
-  padding: 10px;
-  margin-bottom: 20px;
-}
+function updateLocks() {
+  document.querySelectorAll(".course").forEach(course => {
+    const prereqs = course.dataset.prereqs.split(",").filter(Boolean);
+    let locked = false;
 
-.course {
-  display: inline-block;
-  padding: 10px 20px;
-  margin: 5px;
-  background-color: pink;
-  cursor: pointer;
-  border-radius: 5px;
-}
+    prereqs.forEach(prereq => {
+      const isApproved = localStorage.getItem(prereq) === "true";
+      if (!isApproved) locked = true;
+    });
 
-.course.approved {
-  background-color: purple;
-  color: white;
-  text-decoration: line-through;
+    if (locked && !course.classList.contains("approved")) {
+      course.classList.add("locked");
+    } else {
+      course.classList.remove("locked");
+    }
+  });
 }
-
-.course.locked {
-  background-color: grey;
-  color: #333;
-  cursor: not-allowed;
-}
-
