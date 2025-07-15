@@ -1,1 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Malla Interactiva Biotecnología</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>Malla Interactiva Biotecnología</h1>
+
+  <!-- AÑO 1 -->
+  <div class="semester">
+    <h2>Semestre 1</h2>
+    <div class="course" data-id="quimica_general" onclick="toggleCourse(this)" data-prereqs="">Química General</div>
+    <div class="course" data-id="algebra_calculo" onclick="toggleCourse(this)" data-prereqs="">Álgebra y Cálculo Elemental</div>
+    <div class="course" data-id="biologia_celular" onclick="toggleCourse(this)" data-prereqs="">Biología Celular</div>
+    <div class="course" data-id="lab_bio_celular" onclick="toggleCourse(this)" data-prereqs="">Lab. y Sem. Biología Celular</div>
+    <div class="course" data-id="intro_biotecnologia" onclick="toggleCourse(this)" data-prereqs="">Introducción a la Biotecnología</div>
+  </div>
+
+  <div class="semester">
+    <h2>Semestre 2</h2>
+    <div class="course" data-id="quimica_organica" onclick="toggleCourse(this)" data-prereqs="quimica_general">Química Orgánica</div>
+    <div class="course" data-id="calculo_avanzado" onclick="toggleCourse(this)" data-prereqs="algebra_calculo">Cálculo Avanzado</div>
+    <div class="course" data-id="genetica" onclick="toggleCourse(this)" data-prereqs="biologia_celular">Genética</div>
+    <div class="course" data-id="ingles1" onclick="toggleCourse(this)" data-prereqs="">Inglés 1</div>
+    <div class="course" data-id="habilidades_comunicativas" onclick="toggleCourse(this)" data-prereqs="">Habilidades Comunicativas</div>
+  </div>
+
+  <!-- AÑO 2 -->
+  <div class="semester">
+    <h2>Semestre 3</h2>
+    <div class="course" data-id="quimica_analitica" onclick="toggleCourse(this)" data-prereqs="quimica_general">Química Analítica</div>
+    <div class="course" data-id="fisica_ciencias" onclick="toggleCourse(this)" data-prereqs="algebra_calculo">Física para Ciencias Biológicas</div>
+    <div class="course" data-id="fisiologia_general" onclick="toggleCourse(this)" data-prereqs="biologia_celular">Fisiología General</div>
+    <div class="course" data-id="bioseguridad_bioetica" onclick="toggleCourse(this)" data-prereqs="lab_bio_celular">Bioseguridad y Bioética</div>
+    <div class="course" data-id="ingles2" onclick="toggleCourse(this)" data-prereqs="ingles1">Inglés 2</div>
+  </div>
+
+  <div class="semester">
+    <h2>Semestre 4</h2>
+    <div class="course" data-id="fisiologia_vegetal" onclick="toggleCourse(this)" data-prereqs="fisiologia_general">Fisiología Vegetal</div>
+    <div class="course" data-id="fisicoquimica" onclick="toggleCourse(this)" data-prereqs="calculo_avanzado">Fisicoquímica</div>
+    <div class="course" data-id="bioestadistica" onclick="toggleCourse(this)" data-prereqs="algebra_calculo">Bioestadística</div>
+    <div class="course" data-id="ingles3" onclick="toggleCourse(this)" data-prereqs="ingles2">Inglés 3</div>
+    <div class="course" data-id="razonamiento_cientifico" onclick="toggleCourse(this)" data-prereqs="">Razonamiento Científico</div>
+  </div>
+
+  <!-- AÑO 3 -->
+  <div class="semester">
+    <h2>Semestre 5</h2>
+    <div class="course" data-id="quimica_analitica_instrumental" onclick="toggleCourse(this)" data-prereqs="quimica_analitica">Química Analítica Instrumental</div>
+    <div class="course" data-id="bioquimica_general" onclick="toggleCourse(this)" data-prereqs="biologia_celular,quimica_organica,fisicoquimica">Bioquímica General</div>
+    <div class="course" data-id="gestion_finanzas" onclick="toggleCourse(this)" data-prereqs="calculo_avanzado,intro_biotecnologia">Principios de Gestión y Finanzas</div>
+    <div class="course" data-id="lab_bioquimica" onclick="toggleCourse(this)" data-prereqs="bioseguridad_bioetica,lab_bio_celular">Lab. y Sem. Bioquímica</div>
+    <div class="course" data-id="ingles4" onclick="toggleCourse(this)" data-prereqs="ingles3">Inglés 4</div>
+    <div class="course" data-id="pensamiento_critico" onclick="toggleCourse(this)" data-prereqs="">Pensamiento Crítico</div>
+  </div>
+
+  <div class="semester">
+    <h2>Semestre 6</h2>
+    <div class="course" data-id="microbiologia_general" onclick="toggleCourse(this)" data-prereqs="bioquimica_general">Microbiología General</div>
+    <div class="course" data-id="biologia_molecular" onclick="toggleCourse(this)" data-prereqs="bioquimica_general,genetica">Biología Molecular</div>
+    <div class="course" data-id="bioinformatica" onclick="toggleCourse(this)" data-prereqs="bioestadistica">Bioinformática</div>
+    <div class="course" data-id="evaluacion_proyectos" onclick="toggleCourse(this)" data-prereqs="gestion_finanzas">Evaluación de Proyectos</div>
+    <div class="course" data-id="responsabilidad_social" onclick="toggleCourse(this)" data-prereqs="">Responsabilidad Social</div>
+  </div>
+
+  <!-- AÑO 4 -->
+  <div class="semester">
+    <h2>Semestre 7</h2>
+    <div class="course" data-id="biotecnologia_ambiental_vegetal" onclick="toggleCourse(this)" data-prereqs="microbiologia_general,biologia_molecular">Biotecnología Ambiental y Vegetal</div>
+    <div class="course" data-id="biotecnologia_acuicola" onclick="toggleCourse(this)" data-prereqs="biologia_molecular">Biotecnología Acuícola</div>
+    <div class="course" data-id="propiedad_industrial" onclick="toggleCourse(this)" data-prereqs="evaluacion_proyectos">Propiedad Industrial y Transferencia Tecnológica</div>
+    <div class="course" data-id="integrador1" onclick="toggleCourse(this)" data-prereqs="">Integrador 1: Práctica de Laboratorio</div>
+    <div class="course" data-id="operaciones_unitarias" onclick="toggleCourse(this)" data-prereqs="quimica_analitica_instrumental">Operaciones Unitarias</div>
+  </div>
+
+  <div class="semester">
+    <h2>Semestre 8</h2>
+    <div class="course" data-id="bioprocesos" onclick="toggleCourse(this)" data-prereqs="microbiologia_general,operaciones_unitarias">Bioprocesos</div>
+    <div class="course" data-id="biotecnologia_biomedica" onclick="toggleCourse(this)" data-prereqs="biologia_molecular,bioinformatica">Biotecnología Biomédica</div>
+    <div class="course" data-id="emprendimiento" onclick="toggleCourse(this)" data-prereqs="propiedad_industrial">Emprendimiento</div>
+    <div class="course" data-id="curso_avanzado1" onclick="toggleCourse(this)" data-prereqs="biotecnologia_acuicola,ingles4">Curso Formación Avanzada 1</div>
+    <div class="course" data-id="curso_avanzado2" onclick="toggleCourse(this)" data-prereqs="ingles4">Curso Formación Avanzada 2</div>
+  </div>
+
+  <!-- AÑO 5 -->
+  <div class="semester">
+    <h2>Semestre 9</h2>
+    <div class="course" data-id="integrador2" onclick="toggleCourse(this)" data-prereqs="integrador1,bioprocesos,responsabilidad_social">Integrador 2: Práctica Profesional</div>
+    <div class="course" data-id="integrador3_titulo" onclick="toggleCourse(this)" data-prereqs="curso_avanzado1,curso_avanzado2">Integrador 3: Proyecto de Título</div>
+    <div class="course" data-id="integrador3_emprendimiento" onclick="toggleCourse(this)" data-prereqs="curso_avanzado1,curso_avanzado2">Integrador 3: Proyecto de Emprendimiento</div>
+  </div>
+
+  <div class="semester">
+    <h2>Semestre 10</h2>
+    <div class="course" data-id="integrador4_titulo" onclick="toggleCourse(this)" data-prereqs="integrador3_titulo">Integrador 4: Memoria de Título</div>
+    <div class="course" data-id="integrador4_emprendimiento" onclick="toggleCourse(this)" data-prereqs="integrador3_emprendimiento">Integrador 4: Memoria de Emprendimiento</div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
 
